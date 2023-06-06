@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .counters {
+            display: flex;
+            flex-direction: row;
+        }
+        .counter {
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="counters">
+        <div class="counter">
+            <h2>Local Score: </h2>
+            <p id="localscore">0</p>
+            <button onclick="increaselocalscore()">Increase</button>
+        </div>
+        <div class="counter">
+            <h2>Session Score: </h2>
+            <p id="sessionscore">0</p>
+            <button onclick="increasesessionscore()">Increase</button>
+        </div>
+    </div>
+
+    <script>
+        const localelement = document.getElementById("localscore");
+        let localscore = localStorage.getItem('localscore');
+        localelement.textContent=localscore;
+        
+        function increaselocalscore(){
+            localscore++;
+            localelement.textContent=localscore;
+            localStorage.setItem('localscore',localscore);
+        }
+
+        const sessionelement = document.getElementById("sessionscore");
+        let sessionscore=sessionStorage.getItem('sessionscore');
+        sessionelement.textContent=sessionscore;
+
+        function increasesessionscore(){
+            sessionscore++;
+            sessionelement.textContent=sessionscore;
+            sessionStorage.setItem('sessionscore',sessionscore);
+        }
+    </script>
+    
+</body>
+</html> 
