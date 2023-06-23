@@ -13,7 +13,7 @@ getData("skc")
         console.log("Email id of the user id is: " + email);
         console.log("end");
     })
-    .catch((error) => {
+    .catch((error) => {     
         console.error(error);
     });
 
